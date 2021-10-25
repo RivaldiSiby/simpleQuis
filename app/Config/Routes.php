@@ -38,6 +38,10 @@ $routes->get('/daftar', 'Home::daftar');
 
 // User
 $routes->get('/user', 'User::index');
+$routes->get('/Bquis', 'User::Bquis');
+$routes->get('/Iquis', 'User::Iquis');
+$routes->get('/Nquis', 'User::Nquis');
+$routes->get('/profile', 'User::profile');
 $routes->get('/logout', 'User::keluar');
 // User
 

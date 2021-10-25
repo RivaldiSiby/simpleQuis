@@ -5,7 +5,7 @@
     <div class="row bg-danger pt-5">
         <div class="col-sm-5 mx-auto mt-5 p-2 shadow bg-white">
             <form action="/masuk" method="post">
-                <h1 class="text-danger text-center m-3">SimpleQuis</h1>
+                <h1 class="text-danger text-center m-3"><i class="fas fa-trophy"></i>SimpleQuis</h1>
                 <?php if (session()->getFlashdata('pesan')) : ?>
                     <div class="m-3 text-center alert alert-success">
                         <?= session()->getFlashdata('pesan'); ?>
