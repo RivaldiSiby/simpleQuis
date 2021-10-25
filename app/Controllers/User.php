@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Controllers;
+
+use App\Controllers\BaseController;
+
+class User extends BaseController
+{
+    public function index()
+    {
+        return view('user/index');
+    }
+    public function keluar()
+    {
+        session()->destroy();
+        return redirect()->to('/');
+    }
+}

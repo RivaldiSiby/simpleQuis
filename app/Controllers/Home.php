@@ -4,12 +4,23 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
+    public function __construct()
+    {
+        session();
+    }
     public function index()
     {
-        return view('home.php');
+        $data = [
+            'validation' => \Config\Services::validation()
+        ];
+        return view('home.php', $data);
     }
     public function daftar()
     {
-        return view('daftar.php');
+
+        $data = [
+            'validation' => \Config\Services::validation()
+        ];
+        return view('daftar.php', $data);
     }
 }

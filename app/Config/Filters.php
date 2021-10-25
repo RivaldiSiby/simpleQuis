@@ -2,6 +2,8 @@
 
 namespace Config;
 
+use App\Filters\User;
+use App\Filters\UserLogin;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -19,6 +21,8 @@ class Filters extends BaseConfig
         'csrf'     => CSRF::class,
         'toolbar'  => DebugToolbar::class,
         'honeypot' => Honeypot::class,
+        'user' => User::class,
+        'userLogin' => UserLogin::class
     ];
 
     /**
@@ -58,5 +62,16 @@ class Filters extends BaseConfig
      *
      * @var array
      */
-    public $filters = [];
+    public $filters = [
+        'user' => [
+            'before' => [
+                'user/*',
+                'user'
+            ],
+            'after' => [
+                'home/*',
+                'home'
+            ]
+        ]
+    ];
 }
